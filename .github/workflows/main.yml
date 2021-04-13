@@ -30,7 +30,7 @@ jobs:
           python -m pip install jupytext jupyter notebook
       - name: name a kernel to perform the actions
         run: |
-          python -m ipykernel install --name tfrl-ci-pipeline
+          sudo python -m ipykernel install --name tfrl-ci-pipeline
           
       - name: run PY
         run: |
