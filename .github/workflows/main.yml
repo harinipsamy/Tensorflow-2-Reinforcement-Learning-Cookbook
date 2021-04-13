@@ -27,16 +27,16 @@ jobs:
 
       - name: install dependencies
         run: |
-          sudo apt install -y make cmake ffmpeg
-          echo "$PATH"
-          echo "$HOME"
-          pwd
-          wget -O miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh bash -b -p miniconda.sh
-          bash && conda env create -f tfrl-cookbook.yml -n "tfrl-cookbook"
-          conda init bash
-          exec bash
-          conda activate tfrl-cookbook
-          python -m pip install jupytext 
+        # sudo apt install -y make cmake ffmpeg
+#         echo "$PATH"
+#         echo "$HOME"
+#         pwd
+#         wget -O miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh bash -b -p miniconda.sh
+#         bash && conda env create -f tfrl-cookbook.yml -n "tfrl-cookbook"
+#         conda init bash
+#         exec bash
+#         conda activate tfrl-cookbook
+#         python -m pip install jupytext 
 #         for fname in `find . -name "[0-9]*.py"`;do jupytext --set-formats ipynb,py --execute $fname; done;
 #         for fname in `find . -name "[0-9]*.ipynb"`;do jupyter nbconvert $fname --to markdown; done;
 
@@ -44,8 +44,11 @@ jobs:
           
         #jupyter notebook ipykernel pygments==2.4.1
       #
-#       - name: name a kernel to perform the actions
-#         run: |
+      - name: name a kernel to perform the actions
+        run: |
+          conda activate tfrl-cookbook
+          python -m pip install jupytext
+          
           
           
       - name: create .ipynb and .md files
