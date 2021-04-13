@@ -27,7 +27,7 @@ jobs:
 
       - name: install dependencies
         run: |
-          python -m pip install jupytext
+          python -m pip install jupytext jupyter notebook
           
       - name: run PY
         run: |
