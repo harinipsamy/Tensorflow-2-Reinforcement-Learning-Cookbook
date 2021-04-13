@@ -27,13 +27,19 @@ jobs:
 
       - name: install dependencies
         run: |
-          python -m pip install jupytext jupyter notebook ipykernel pygments==2.4.1
-          python -m ipykernel install --user --name=tfrl-ci-pipeline
+          sudo apt install -y make cmake ffmpeg
+          wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && bash -b -p ${HOME}/miniconda3
+          bash && conda env create -f tfrl-cookbook.yml -n "tfrl-cookbook"
+          conda activate tfrl-cookbook
+          
+          
+        #python -m pip install jupytext jupyter notebook ipykernel pygments==2.4.1
+      #python -m ipykernel install --user --name=tfrl-ci-pipeline
 #       - name: name a kernel to perform the actions
 #         run: |
           
           
-      - name: run PY
+      - name: create .ipynb and .md files
         run: |
           for fname in `find . -name "[0-9]*.py"`;do jupytext --set-formats ipynb,py --execute $fname; done;
           for fname in `find . -name "[0-9]*.ipynb"`;do jupyter nbconvert $fname --to markdown; done;
