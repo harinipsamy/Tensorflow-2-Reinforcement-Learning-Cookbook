@@ -46,6 +46,7 @@ jobs:
       #
       - name: name a kernel to perform the actions
         run: |
+          conda init bash
           conda activate tfrl-cookbook
           python -m pip install jupytext
           
