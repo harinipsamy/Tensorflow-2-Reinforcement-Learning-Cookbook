@@ -28,7 +28,7 @@ jobs:
       - name: install dependencies
         run: |
           python -m pip install jupytext jupyter notebook ipykernel
-          sudo python -m ipykernel install --name tfrl-ci-pipeline
+          python -m ipykernel install --user --name=tfrl-ci-pipeline
 #       - name: name a kernel to perform the actions
 #         run: |
           
