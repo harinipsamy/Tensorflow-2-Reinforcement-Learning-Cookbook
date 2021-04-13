@@ -33,4 +33,5 @@ jobs:
       
         run: |
           print("okay")
+        shell: python
   
