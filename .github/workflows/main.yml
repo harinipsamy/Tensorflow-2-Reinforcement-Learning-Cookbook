@@ -28,6 +28,7 @@ jobs:
       - name: install dependencies
         run: |
           python -m pip install jupytext jupyter notebook
+          Install one with 'python -m ipykernel install --name tfrl-ci-pipeline'
           
       - name: run PY
         run: |
