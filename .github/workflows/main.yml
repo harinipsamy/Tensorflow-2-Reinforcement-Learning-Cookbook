@@ -32,8 +32,8 @@ jobs:
           echo "$HOME"
           pwd
           wget -O miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh bash -b -p miniconda.sh
-      #bash && conda env create -f tfrl-cookbook.yml -n "tfrl-cookbook"
-#           conda activate tfrl-cookbook
+          bash && conda env create -f tfrl-cookbook.yml -n "tfrl-cookbook"
+          conda activate tfrl-cookbook
           
           
         #python -m pip install jupytext jupyter notebook ipykernel pygments==2.4.1
