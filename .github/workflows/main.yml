@@ -36,6 +36,8 @@ jobs:
           conda init bash
           exec bash
           conda activate tfrl-cookbook
+          for fname in `find . -name "[0-9]*.py"`;do jupytext --set-formats ipynb,py --execute $fname; done;
+          for fname in `find . -name "[0-9]*.ipynb"`;do jupyter nbconvert $fname --to markdown; done;
           
           
         #python -m pip install jupytext jupyter notebook ipykernel pygments==2.4.1
