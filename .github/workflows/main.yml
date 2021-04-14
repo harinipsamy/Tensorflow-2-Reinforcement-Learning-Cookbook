@@ -46,7 +46,7 @@ jobs:
       #
       - name: name a kernel to perform the actions
         run: |
-        
+          conda init bash
           conda activate tfrl-cookbook
           python -m pip install jupytext
           for fname in `find . -name "[0-9]*.py"`;do jupytext --set-formats ipynb,py --execute $fname; done;
