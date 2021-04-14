@@ -48,10 +48,8 @@ jobs:
         run: |
           conda init bash
           exec bash
-          conda activate tfrl-cookbook
-          python -m pip install jupytext
-          for fname in `find . -name "[0-9]*.py"`;do jupytext --set-formats ipynb,py --execute $fname; done;
-          for fname in `find . -name "[0-9]*.ipynb"`;do jupyter nbconvert $fname --to markdown; done;
+          conda activate tfrl-cookbook && python -m pip install jupytext
+          bash && for fname in `find . -name "[0-9]*.py"`;do jupytext --set-formats ipynb,py --execute $fname; done; && for fname in `find . -name "[0-9]*.ipynb"`;do jupyter nbconvert $fname --to markdown; done;
           import jupytext
           echo "hallo"
 
