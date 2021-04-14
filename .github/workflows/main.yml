@@ -27,7 +27,7 @@ jobs:
 
       - name: install dependencies
         run: |
-        # sudo apt install -y make cmake ffmpeg
+  # sudo apt install -y make cmake ffmpeg
 #         echo "$PATH"
 #         echo "$HOME"
 #         pwd
@@ -35,10 +35,10 @@ jobs:
 #         bash && conda env create -f tfrl-cookbook.yml -n "tfrl-cookbook"
 #         conda init bash
 #         exec bash
-#         conda activate tfrl-cookbook
-#         python -m pip install jupytext 
-#         for fname in `find . -name "[0-9]*.py"`;do jupytext --set-formats ipynb,py --execute $fname; done;
-#         for fname in `find . -name "[0-9]*.ipynb"`;do jupyter nbconvert $fname --to markdown; done;
+#           conda activate tfrl-cookbook
+#           python -m pip install jupytext 
+#           for fname in `find . -name "[0-9]*.py"`;do jupytext --set-formats ipynb,py --execute $fname; done;
+#           for fname in `find . -name "[0-9]*.ipynb"`;do jupyter nbconvert $fname --to markdown; done;
 
       #python -m ipykernel install --user --name=tfrl-cookbook
           
@@ -46,15 +46,17 @@ jobs:
       #
       - name: name a kernel to perform the actions
         run: |
-          conda init bash
+        
           conda activate tfrl-cookbook
           python -m pip install jupytext
-          
+          for fname in `find . -name "[0-9]*.py"`;do jupytext --set-formats ipynb,py --execute $fname; done;
+          for fname in `find . -name "[0-9]*.ipynb"`;do jupyter nbconvert $fname --to markdown; done;
+
           
           
       - name: create .ipynb and .md files
         run: |
-          for fname in `find . -name "[0-9]*.py"`;do jupytext --set-formats ipynb,py --execute $fname; done;
-          for fname in `find . -name "[0-9]*.ipynb"`;do jupyter nbconvert $fname --to markdown; done;
-        
+#         for fname in `find . -name "[0-9]*.py"`;do jupytext --set-formats ipynb,py --execute $fname; done;
+#         for fname in `find . -name "[0-9]*.ipynb"`;do jupyter nbconvert $fname --to markdown; done;
+
   
