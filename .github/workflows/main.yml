@@ -49,7 +49,7 @@ jobs:
           echo "hallo1"
           conda init bash
           echo "hallo2"
-          exec bash
+          bash
           echo "hallo3"
           python import jupytext
           conda activate tfrl-cookbook && python -m pip install jupytext
