@@ -25,8 +25,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: install dependencies
-        run: echo "hello"
+#       - name: install dependencies
+#         run: echo "hello"
   # sudo apt install -y make cmake ffmpeg
 #         echo "$PATH"
 #         echo "$HOME"
@@ -49,9 +49,10 @@ jobs:
           echo "hallo1"
           conda init bash
           exec bash
+          echo "hallo2"
           python import jupytext
           conda activate tfrl-cookbook && python -m pip install jupytext
-          echo "hallo2"
+          echo "hallo3"
           bash && for fname in `find . -name "[0-9]*.py"`;do jupytext --set-formats ipynb,py --execute $fname; done; && for fname in `find . -name "[0-9]*.ipynb"`;do jupyter nbconvert $fname --to markdown; done;
           import jupytext
           echo "hallo"
