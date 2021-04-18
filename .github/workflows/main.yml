@@ -46,12 +46,12 @@ jobs:
       #
       - name: name a kernel to perform the actions
         run: |
-          echo "hallo1"
+          
           conda init bash
           echo "hallo2"
           bash
           echo "hallo3"
-          python import jupytext
+          
           conda activate tfrl-cookbook && python -m pip install jupytext
           echo "hallo4"
           bash && for fname in `find . -name "[0-9]*.py"`;do jupytext --set-formats ipynb,py --execute $fname; done; && for fname in `find . -name "[0-9]*.ipynb"`;do jupyter nbconvert $fname --to markdown; done;
