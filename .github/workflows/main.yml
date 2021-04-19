@@ -30,7 +30,7 @@ jobs:
             sudo apt install -y make cmake ffmpeg
             wget -O miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh bash -b -p miniconda.sh
             
-            bash && conda env create -f tfrl-cookbook.yml -n "tfrl-cookbook" && conda init bash
+            bash && conda env create -f tfrl-cookbook.yml -n "tfrl-cookbook" 
             
             source /usr/share/miniconda/bin/activate "/usr/share/miniconda/envs/tfrl-cookbook/bin/python"
             python -m pip install jupytext 
