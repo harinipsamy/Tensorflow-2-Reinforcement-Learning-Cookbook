@@ -32,6 +32,7 @@ jobs:
             
             bash && conda env create -f tfrl-cookbook.yml -n "tfrl-cookbook"
             bash
+            find / -xdev 2>/dev/null -name "exampledocs"
             find ~/miniconda -name activate
             source activate "/usr/share/miniconda/envs/tfrl-cookbook/bin/python"
             python -m pip install jupytext 
