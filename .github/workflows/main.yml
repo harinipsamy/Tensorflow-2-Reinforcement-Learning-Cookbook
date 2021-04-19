@@ -27,10 +27,9 @@ jobs:
 
       - name: install dependencies
         run: |
-            cd /home/runner/work/Tensorflow-2-Reinforcement-Learning-Cookbook/ && ls
             sudo apt install -y make cmake ffmpeg
             wget -O miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh bash -b -p miniconda.sh
-        
+            cd /home/runner/work/Tensorflow-2-Reinforcement-Learning-Cookbook//Tensorflow-2-Reinforcement-Learning-Cookbook && ls
             
             bash
             source activate tfrl-cookbook
