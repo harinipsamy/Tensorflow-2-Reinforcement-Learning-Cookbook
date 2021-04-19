@@ -30,13 +30,14 @@ jobs:
             cd /home/runner/work/Tensorflow-2-Reinforcement-Learning-Cookbook/ && ls
             sudo apt install -y make cmake ffmpeg
             wget -O miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh bash -b -p miniconda.sh
-            bash && conda env create -f tfrl-cookbook.yml -n "tfrl-cookbook"
+        
             conda init bash
             exec bash
             source activate tfrl-cookbook
             python -m pip install jupytext 
             for fname in `find . -name "[0-9]*.py"`;do jupytext --set-formats ipynb,py --execute $fname; done;
             for fname in `find . -name "[0-9]*.ipynb"`;do jupyter nbconvert $fname --to markdown; done;
+            # bash && conda env create -f tfrl-cookbook.yml -n "tfrl-cookbook"
 
       #python -m ipykernel install --user --name=tfrl-cookbook
           
