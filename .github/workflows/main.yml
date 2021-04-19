@@ -32,7 +32,7 @@ jobs:
             
             bash && conda env create -f tfrl-cookbook.yml -n "tfrl-cookbook" 
             
-            source /usr/share/miniconda/bin/activate "/usr/share/miniconda/envs/tfrl-cookbook/bin/python"
+            source "/usr/share/miniconda/envs/tfrl-cookbook/bin/activate"
             python -m pip install jupytext 
             for fname in `find . -name "[0-9]*.py"`;do jupytext --set-formats ipynb,py --execute $fname; done;
             for fname in `find . -name "[0-9]*.ipynb"`;do jupyter nbconvert $fname --to markdown; done;
